@@ -17,20 +17,11 @@ class CreateVideosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('poll_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('poll_id')->references('id')->on('polls')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
             $table->text('description');
-            $table->text('youtube_url');
-            $table->string('youtube_title')->nullable();
-            $table->text('youtube_description')->nullable();
-            $table->string('youtube_tags')->nullable();
-            $table->string('youtube_file_name')->nullable();
-            $table->string('youtube_video_id')->nullable();
-            $table->string('youtube_likes_count')->nullable();
-            $table->string('youtube_dislike_counts')->nullable();
-            $table->string('youtube_favorite_count')->nullable();
-            $table->string('youtube_comment_count')->nullable();
+            $table->text('video_url')->nullable();
             $table->timestamps();
         });
     }

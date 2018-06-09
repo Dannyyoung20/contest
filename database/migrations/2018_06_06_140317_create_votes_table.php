@@ -19,7 +19,7 @@ class CreateVotesTable extends Migration
             $table->unsignedInteger('poll_id');
             $table->unsignedInteger('video_id');
             $table->unsignedInteger('subscription_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('poll_id')->references('id')->on('polls')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('video_id')->references('id')->on('videos')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('subscription_id')->references('id')->on('subscriptions')->onDelete('cascade')->onUpdate('cascade');
