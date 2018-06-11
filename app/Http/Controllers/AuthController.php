@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-namespace App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {
@@ -78,7 +78,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
-            'user' => auth()->user()->name
+            'user' => auth()->user()
         ]);
     }
 }
