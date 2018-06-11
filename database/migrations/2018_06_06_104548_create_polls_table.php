@@ -17,6 +17,7 @@ class CreatePollsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('video_url')->nullable();
             $table->string('poll_uid');
             $table->string('title');
             $table->text('description');
